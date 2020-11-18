@@ -1,0 +1,8 @@
+https://github.com/chadam189/hr-mso-nov2020-conf-attendance.git
+https://github.com/wellhausen/attendees-service.git
+https://github.com/Xi99/badges-service.git
+https://github.com/squillen/conference_app_events.git
+https://github.com/elderbas/hr_ms_o_conference_locations.git
+https://github.com/chokoreetosan/Presentation-Microservice.git
+https://github.com/r3dcrosse/sponsor-service.git
+https://github.com/Cheerazar/vendors-service.git

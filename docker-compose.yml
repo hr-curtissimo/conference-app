@@ -1,0 +1,24 @@
+version: "3.8"
+services:
+  # Business
+  sponsors:
+    build: ./sponsor-service
+    depends_on:
+      - postgresql
+
+  # Infrastructure
+  postgresql:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: password
+    volumes:
+      - ./pg_data:/var/lib/postgresql/data
+  mongodb:
+    image: mongo
+    restart: always
+    volumes:
+      - ./mongo_data:/data/db
+  rabbitmq:
+    image: rabbitmq
+    restart: always
