@@ -1,0 +1,21 @@
+[submodule "attendees-service"]
+	path = attendees-service
+	url = git@github.com:hr-curtissimo/attendees-service.git
+[submodule "badges-service"]
+	path = badges-service
+	url = git@github.com:hr-curtissimo/badges-service.git
+[submodule "conference_app_events"]
+	path = conference_app_events
+	url = git@github.com:hr-curtissimo/conference_app_events.git
+[submodule "hr_ms_o_conference_locations"]
+	path = hr_ms_o_conference_locations
+	url = git@github.com:hr-curtissimo/hr_ms_o_conference_locations.git
+[submodule "Presentation-Microservice"]
+	path = Presentation-Microservice
+	url = git@github.com:hr-curtissimo/Presentation-Microservice.git
+[submodule "sponsor-service"]
+	path = sponsor-service
+	url = git@github.com:hr-curtissimo/sponsor-service.git
+[submodule "vendors-service"]
+	path = vendors-service
+	url = git@github.com:hr-curtissimo/vendors-service.git
