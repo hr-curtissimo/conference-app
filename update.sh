@@ -7,7 +7,6 @@ do
 	
 	if [ -d "$repo_name" ]
 	then
-		git submodule update $repo_name
 		pushd $repo_name
 		git pull --ff-only -Xtheirs upstream $(git branch --show-current)
 		git pull --ff-only origin $(git branch --show-current)

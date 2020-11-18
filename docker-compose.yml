@@ -1,24 +1,54 @@
 version: "3.8"
 services:
   # Business
+  events:
+    build: ./conference_app_events
+    depends_on:
+      - mongodb
+      - rabbitmq
+    ports:
+      - "8081:8080"
+    environment:
+      DB_URI: mongodb://mongodb:27017/events-dev
+      DB_NAME: development
+      PORT: 8080
+      RABBIT_HOST: rabbitmq
   sponsors:
     build: ./sponsor-service
     depends_on:
       - postgresql
+      - rabbitmq
+    ports:
+        - "8082:8080"
+    environment:
+      PG_DB_NAME: sponsors
+      PG_IP: postgresql
+      PG_PASS: password
+      PG_PORT: 5432
+      PG_SSL: disable
+      PG_USER: user
+      RABBITMQ_IP: rabbitmq
 
   # Infrastructure
   postgresql:
-    image: postgres
-    restart: always
     environment:
+      POSTGRES_USER: user
       POSTGRES_PASSWORD: password
+    image: postgres
+    ports:
+      - "5432:5432"
+    restart: always
     volumes:
       - ./pg_data:/var/lib/postgresql/data
   mongodb:
     image: mongo
+    ports:
+      - "27017:27017"
     restart: always
     volumes:
       - ./mongo_data:/data/db
   rabbitmq:
     image: rabbitmq
+    ports:
+      - "5672:5672"
     restart: always
