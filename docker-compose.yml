@@ -6,20 +6,19 @@ services:
     depends_on:
       - mongodb
       - rabbitmq
-    ports:
-      - "8081:8080"
     environment:
       DB_URI: mongodb://mongodb:27017/events-dev
       DB_NAME: development
       PORT: 8080
       RABBIT_HOST: rabbitmq
+    ports:
+      - "8081:8080"
+    restart: always
   sponsors:
     build: ./sponsor-service
     depends_on:
       - postgresql
       - rabbitmq
-    ports:
-        - "8082:8080"
     environment:
       PG_DB_NAME: sponsors
       PG_IP: postgresql
@@ -28,6 +27,9 @@ services:
       PG_SSL: disable
       PG_USER: user
       RABBITMQ_IP: rabbitmq
+    ports:
+        - "8082:8000"
+    restart: always
 
   # Infrastructure
   postgresql:
